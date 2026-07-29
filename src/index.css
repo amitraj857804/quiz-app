@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — "Ledger" theme: an ink-and-paper exam/grading feel  */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-ink-950: #0e141a;
+  --color-ink-900: #151d25;
+  --color-ink-800: #1d2731;
+  --color-ink-700: #2a343e;
+  --color-line: #2a333d;
+
+  --color-paper: #f2eee4;
+  --color-paper-dim: #a8a296;
+
+  --color-gold: #e3b34d;
+  --color-gold-dim: #b98f3a;
+
+  --color-correct: #5b9a6f;
+  --color-correct-dim: #3f6d4e;
+
+  --color-error: #d2654f;
+  --color-error-dim: #9c4835;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink-950);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* subtle ledger grid on the base background */
+.ledger-grid {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center;
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
